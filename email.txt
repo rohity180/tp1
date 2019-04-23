@@ -1,0 +1,14 @@
+            MailMessage mail = new MailMessage();
+            mail.To.Add("shreemahavirpacker@gmail.com");
+            mail.From = new MailAddress("rohit4you99@gmail.com");
+            mail.Subject = "subject here";
+            mail.Body = "message here";
+            mail.IsBodyHtml = true;
+            
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential("rohit4you99@gmail.com", "fwdlpzwyoxhjlspe");
+            smtp.Send(mail);
